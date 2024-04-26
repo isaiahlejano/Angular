@@ -1,12 +1,11 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"name": "Sandbox - FileSystem",
-			"uri": "ccfs://current-sandbox"
-		}
-	],
-	"settings": {}
+    "folders": [
+        {
+            "name": "Sandbox - FileSystem",
+            "uri": "ccfs://current-sandbox"
+        },
+        {
+            "path": ".."
+        }
+    ]
 }
