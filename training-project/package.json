@@ -1,5 +1,5 @@
 {
-  "name": "angular-training",
+  "name": "training-project",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:angular-training": "node dist/angular-training/server/server.mjs"
+    "serve:ssr:training-project": "node dist/training-project/server/server.mjs"
   },
   "private": true,
   "dependencies": {
