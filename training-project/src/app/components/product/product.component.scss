@@ -1,0 +1,22 @@
+.row {
+    span {
+        &.price-label,
+        &.price {
+            display: inline;
+            width: auto;
+            max-width: unset;
+            padding: 0;
+        }
+    }
+}
+
+.product {
+    &-wrapper {
+        transition: all 0.3s linear;
+        background: rgba(255, 255, 255, 0.025);
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.product {
+    &-grid {
+        & > * {
+            --card-grid-width: calc( 33.3333% - 1rem );
+            flex: var(--card-grid-width);
+            width: var(--card-grid-width);
+            max-width: var(--card-grid-width);
+        }
+    }
+}
