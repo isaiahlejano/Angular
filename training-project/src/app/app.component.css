@@ -1,0 +1,35 @@
+@media only screen and (min-width: 767px) {
+  header.container-fluid,
+  footer.container-fluid {
+    --bs-gutter-x: 5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  main.container-fluid {
+    --bs-gutter-x: 25rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media only screen and (min-width: 767px) and (max-width: 1024px) {
+  main.container-fluid {
+    --bs-gutter-x: 15rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}/*# sourceMappingURL=app.component.css.map */

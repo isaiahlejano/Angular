@@ -1,54 +1,55 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+import { Paginator, PaginatorModule } from 'primeng/paginator';
+
 import { Product, Products } from '../../../interfaces';
 import { ProductComponent } from '../../components/product/product.component';
+import { ProductsService } from '../../services/product/product.service';
 
 @Component({
   selector: 'app-shop',
   standalone: true,
-  imports: [RouterModule, CommonModule, ProductComponent],
+  imports: [
+    RouterModule,
+    CommonModule,
+    ProductComponent,
+    PaginatorModule
+  ],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss',
 })
 
 export class ShopComponent {
-  products: Product[] = [
-    {
-      id: 1,
-      name: 'Test Product 1',
-      price: '25.00'
-    },
-    {
-      id: 2,
-      name: 'Test Product 2',
-      price: '50.00'
-    },
-    {
-      id: 3,
-      name: 'Test Product 3',
-      price: '50.00'
-    },
-    {
-      id: 4,
-      name: 'Test Product 4',
-      price: '50.00'
-    },
-    {
-      id: 5,
-      name: 'Test Product 5',
-      price: '50.00'
-    },
-    {
-      id: 6,
-      name: 'Test Product 6',
-      price: '50.00'
-    },
-    {
-      id: 7,
-      name: 'Test Product 7',
-      price: '50.00'
-    },
-  ];
+  constructor(private productSvc: ProductsService) {}
+
+  @ViewChild('paginator') paginator: Paginator | undefined;
+
+  products: Product[] = [];
+
+  rows: number = 12;
+  totalRecords: number = 0;
+
+  onPageChange(event: any) {
+    this.fetchProducts(event.page, event.rows);
+  }
+
+  fetchProducts(page: number, perPage: number) {
+    this.productSvc
+      .getProducts('http://localhost:3000/api', { page, perPage })
+      .subscribe({
+        next: (data: Products) => {
+          this.products = data.items;
+          this.totalRecords = data.total;
+        },
+        error: (error) => {
+          console.log(error);
+        },
+      });
+  }
+
+  ngOnInit() {
+    this.fetchProducts(0, this.rows);
+  }
 }

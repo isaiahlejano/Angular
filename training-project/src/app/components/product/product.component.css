@@ -1,0 +1,24 @@
+.row span.price-label, .row span.price {
+  display: inline;
+  width: auto;
+  max-width: unset;
+  padding: 0;
+}
+
+.product-wrapper {
+  display: grid;
+  min-height: 10rem;
+  transition: all 0.3s linear;
+  background: rgba(255, 255, 255, 0.025);
+}
+@media only screen and (min-width: 767px) {
+  .product-wrapper {
+    min-height: 14rem;
+  }
+}
+.product-wrapper:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+.product-wrapper .price-wrapper {
+  align-self: flex-end;
+}/*# sourceMappingURL=product.component.css.map */

@@ -1,9 +1,22 @@
-<div>
+<div class="shop-container">
     <h1>Shop Page</h1>
-    <div class="d-flex flex-wrap gap-2 space-between product-grid">
+    <div class="grid space-between product-grid">
         <app-product
         *ngFor="let product of products"
         [product]="product"
         ></app-product>
+    </div>
+    
+    <div class="pagination-wrapper">
+        <p-paginator
+            [rows]="rows"
+            [totalRecords]="totalRecords"
+            (onPageChange)="onPageChange($event)"
+            #paginator
+        ></p-paginator>
+    </div>
+
+    <div class="add-product-button-wrapper">
+        <button class="add-product" title="add-product">+</button>
     </div>
 </div>
